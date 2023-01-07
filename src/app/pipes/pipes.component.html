@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm form-control" style="border: 2px solid; margin-top: 9px; ">
+        <form>
+          <div class="mb-3">
+            <h3>Pipes</h3>
+            <label for="exampleInputstring" class="form-label">Valor:</label>
+            <input placeholder="ingrese valor"  type="string" [(ngModel)]="cadena" name="cadena">
+            <div id="stringHelp" class="form-text">Mayusculas</div>
+          </div>
+          <div class="mb-3">
+            <div> Resultado:  {{cadena | uppercase}} </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <div class="form-control p8" style="border: 2px solid; margin-top: 9px;">
+        <label for="valor">Monto:</label>
+        <input [(ngModel)]="monto" type="number" class="form-control" id="monto">
+        <select id="moneda" class="form-select" [(ngModel)] = "moneda">
+            <option value="" disabled selected hidden>Seleccione Moneda</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select>
+    
+        <div>
+            <b>{{monto |currency: moneda}}</b>
+        </div>
+    </div>
+    <br>
+    <div class="col-sm form-control" style="border: 2px solid; margin-top: 9px;">
+      <div>
+        <h3>Tiempo Transcurrido:</h3>
+        <p>Del 01/06/2023 18:00 : {{'01/06/2023 18:00' | mypipe }}</p>
+        <p>Del 01/06/2023 13:00 : {{'01/06/2023 14:00' | mypipe }}</p>
+        <p>Del 01/04/2023 12:00 : {{'01/04/2023 12:00' | mypipe }}</p>
+        <p>Del 10/27/2022 12:00 : {{'10/27/2022 12:00' | mypipe }}</p>
+
+
+      </div>
+</div>
+
+   
